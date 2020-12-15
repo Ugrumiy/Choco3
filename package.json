@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
-  "homepage": "https://ugrumiy.github.io/Choco3/",
+  "homepage": "https://ugrumiy.github.io/ChocoStory/",
   "dependencies": {
     "csv-string": "4.0.1",
     "node-sass": "^4.0.0",
