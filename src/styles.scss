@@ -18,8 +18,9 @@
   & > tbody > tr > td > table td:last-child div{
     word-wrap: break-word;         /* All browsers since IE 5.5+ */
     overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+    white-space: break-spaces;
   }
-  
+
   table {
     margin: 0 !important;
     border: none;
