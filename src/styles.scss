@@ -1,0 +1,43 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.tabs {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+.table__package {
+  & > tbody > tr > td:not(:first-child) {
+    padding: 0;
+  }
+  & > tbody > tr > td > table td:last-child div{
+    word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+  }
+  
+  table {
+    margin: 0 !important;
+    border: none;
+    & tr:last-child td {
+      border-bottom: none;
+    }
+    td {
+      border-top: none;
+      border-left: none;
+      &:last-child{
+        border-right: none;
+      }
+    }
+    table td {
+      border-top: none;
+      // padding: 0;
+    }
+  }
+
+}
+
