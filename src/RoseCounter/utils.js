@@ -83,7 +83,9 @@ const getRealPackagingNames = (packagingDetails) => {
         case "S": {
           const obj = packagingDetails[packagingType][color];
           let res = "";
+
           Object.keys(obj).forEach((size) => {
+            console.log(size)
             res = `${res}${size} - ${obj[size]} шт.\n`;
           });
           result[packagingType][color] = res;
@@ -110,12 +112,12 @@ export const getTotalColors = (data) => {
     const splitOrderSKU = updatedSKU.split("-");
     const numberOfBouquets = order[3];
     const bouqSize = splitOrderSKU[0].replace(/^\D+/g, "");
-
+    const packagingType = splitOrderSKU[0].replace(/\d/g, "");
     result.totalOrders = result.totalOrders += 1;
 
     // roses
     result.totalRoses = result.totalRoses += parseInt(bouqSize, 10);
-    const orderColorCode = splitOrderSKU.length === 2 ? splitOrderSKU[1] : splitOrderSKU[2];
+    const orderColorCode = splitOrderSKU.length === 2 || packagingType === 'K' ? splitOrderSKU[1] : splitOrderSKU[2];
     const bouqInfo = getColorsPerBouqet(bouqSize, orderColorCode);
 
     Object.keys(bouqInfo).forEach((color) => {
@@ -129,7 +131,6 @@ export const getTotalColors = (data) => {
     });
 
     // packaging
-    let packagingType = splitOrderSKU[0].replace(/\d/g, "");
     const packagingColor = getPackagingColor(packagingType, splitOrderSKU);
     if (!result.packagingDetails[packagingType]) {
       result.packagingDetails[packagingType] = {};

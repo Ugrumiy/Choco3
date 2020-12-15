@@ -7,7 +7,7 @@ import TdColor from "../Components/TdColor";
 
 export default ({ data }) => (
   <Table className="table__package" style={{ maxWidth: "700px" }}>
-    {Object.keys(data.packagingDetails).map((type) => (
+    {Object.keys(data.packagingDetails).sort().map((type) => (
       <Tr key={type}>
         <Td width="200px">{packageNamesMap[type]}</Td>
         <Td>
