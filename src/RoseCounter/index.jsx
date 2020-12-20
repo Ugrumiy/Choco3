@@ -21,7 +21,7 @@ export default () => {
   const handleFileRead = (e) => {
     const content = fileReader.result;
     let arr = CSV.parse(content);
-    arr = arr.slice(1, arr.length);
+    // arr = arr.slice(1, arr.length);
     setData(getTotalColors(arr));
     e.target.value = null;
   };

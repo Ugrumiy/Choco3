@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ChocoStory/static/css/main.5f55a625.chunk.css",
-    "main.js": "/ChocoStory/static/js/main.f9448389.chunk.js",
-    "main.js.map": "/ChocoStory/static/js/main.f9448389.chunk.js.map",
+    "main.js": "/ChocoStory/static/js/main.36899f33.chunk.js",
+    "main.js.map": "/ChocoStory/static/js/main.36899f33.chunk.js.map",
     "runtime-main.js": "/ChocoStory/static/js/runtime-main.7a824f04.js",
     "runtime-main.js.map": "/ChocoStory/static/js/runtime-main.7a824f04.js.map",
     "static/js/2.737e7e19.chunk.js": "/ChocoStory/static/js/2.737e7e19.chunk.js",
     "static/js/2.737e7e19.chunk.js.map": "/ChocoStory/static/js/2.737e7e19.chunk.js.map",
     "index.html": "/ChocoStory/index.html",
-    "precache-manifest.1c52094d13eb9c397a359404cbbe0cb0.js": "/ChocoStory/precache-manifest.1c52094d13eb9c397a359404cbbe0cb0.js",
+    "precache-manifest.09e148d0a499223c4fa94293b30316f4.js": "/ChocoStory/precache-manifest.09e148d0a499223c4fa94293b30316f4.js",
     "service-worker.js": "/ChocoStory/service-worker.js",
     "static/css/main.5f55a625.chunk.css.map": "/ChocoStory/static/css/main.5f55a625.chunk.css.map",
     "static/js/2.737e7e19.chunk.js.LICENSE.txt": "/ChocoStory/static/js/2.737e7e19.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7a824f04.js",
     "static/js/2.737e7e19.chunk.js",
     "static/css/main.5f55a625.chunk.css",
-    "static/js/main.f9448389.chunk.js"
+    "static/js/main.36899f33.chunk.js"
   ]
 }
