@@ -169,7 +169,7 @@ export const getTotalColors = (data) => {
         }
       }
     } catch(error) {
-      const errText = `Ошибка обработки заказа ${order}. Строка ${i}`;
+      const errText = `Ошибка обработки заказа ${order}. Строка ${i + 1}`;
       alert(errText)
       throw new Error(errText)
     }
