@@ -1,4 +1,5 @@
 import { proportions, roseColors, boxSizesMap } from "../const";
+
 const getDivision = (num, colorAmount) => {
   let result = [];
 
@@ -108,63 +109,69 @@ export const getTotalColors = (data) => {
     packagingDetails: {}
   };
 
-  data.forEach((order) => {
-    const sku = order[2];
-    const updatedSKU = sku.replace("ZS", "S"); // ZS id sthe same as S
-    const splitOrderSKU = updatedSKU.split("-");
-    const numberOfBouquets = order[3];
-    const bouqSize = splitOrderSKU[0].replace(/^\D+/g, "");
-    const packagingType = splitOrderSKU[0].replace(/\d/g, "");
-    result.totalOrders = result.totalOrders += 1;
+  data.forEach((order, i) => {
+    try {
+      const sku = order[2];
+      const updatedSKU = sku.replace("ZS", "S"); // "ZS" id is the same as "S"
+      const splitOrderSKU = updatedSKU.split("-");
+      const numberOfBouquets = order[3];
+      const bouqSize = splitOrderSKU[0].replace(/^\D+/g, "");
+      const packagingType = splitOrderSKU[0].replace(/\d/g, "");
+      result.totalOrders = result.totalOrders += 1;
 
-    // roses
-    result.totalRoses = result.totalRoses += parseInt(bouqSize, 10);
-    const orderColorCode = splitOrderSKU.length === 2 || packagingType === 'K' ? splitOrderSKU[1] : splitOrderSKU[2];
-    const bouqInfo = getColorsPerBouqet(bouqSize, orderColorCode);
+      // roses
+      result.totalRoses = result.totalRoses += parseInt(bouqSize, 10);
+      const orderColorCode = splitOrderSKU.length === 2 || packagingType === 'K' ? splitOrderSKU[1] : splitOrderSKU[2];
+      const bouqInfo = getColorsPerBouqet(bouqSize, orderColorCode);
 
-    Object.keys(bouqInfo).forEach((color) => {
-      const colorsInOrder = bouqInfo[color] * numberOfBouquets;
+      Object.keys(bouqInfo).forEach((color) => {
+        const colorsInOrder = bouqInfo[color] * numberOfBouquets;
 
-      // if (!result.roseStats[color]) {
-      //   result.roseStats[color] = {};
-      // }
-      // if (!result.roseStats[color][sku]) {
-      //   result.roseStats[color][sku] = [];
-      //   result.roseStats[color][sku].push({
-      //     orderId: order[1],
-      //     numberOfBouquets,
-      //     colorsInOrder
-      //   });
-      // } else {
-      //   result.roseStats[color][sku].push({
-      //     orderId: order[1],
-      //     numberOfBouquets,
-      //     colorsInOrder
-      //   });
-      // }
+        // if (!result.roseStats[color]) {
+        //   result.roseStats[color] = {};
+        // }
+        // if (!result.roseStats[color][sku]) {
+        //   result.roseStats[color][sku] = [];
+        //   result.roseStats[color][sku].push({
+        //     orderId: order[1],
+        //     numberOfBouquets,
+        //     colorsInOrder
+        //   });
+        // } else {
+        //   result.roseStats[color][sku].push({
+        //     orderId: order[1],
+        //     numberOfBouquets,
+        //     colorsInOrder
+        //   });
+        // }
 
-      if (!result.roseDetails[color]) {
-        result.roseDetails[color] = colorsInOrder;
-      } else {
-        result.roseDetails[color] += colorsInOrder;
+        if (!result.roseDetails[color]) {
+          result.roseDetails[color] = colorsInOrder;
+        } else {
+          result.roseDetails[color] += colorsInOrder;
+        }
+      });
+
+      // packaging
+      const packagingColor = getPackagingColor(packagingType, splitOrderSKU);
+      if (packagingType !== 'R') {
+        if (!result.packagingDetails[packagingType]) {
+          result.packagingDetails[packagingType] = {};
+        }
+        if (!result.packagingDetails[packagingType][packagingColor]) {
+          result.packagingDetails[packagingType][packagingColor] = {};
+        }
+        if (!result.packagingDetails[packagingType][packagingColor][bouqSize]) {
+          result.packagingDetails[packagingType][packagingColor][bouqSize] = 1;
+        } else {
+          result.packagingDetails[packagingType][packagingColor][bouqSize] =
+            result.packagingDetails[packagingType][packagingColor][bouqSize] + 1;
+        }
       }
-    });
-
-    // packaging
-    const packagingColor = getPackagingColor(packagingType, splitOrderSKU);
-    if (packagingType !== 'R') {
-      if (!result.packagingDetails[packagingType]) {
-        result.packagingDetails[packagingType] = {};
-      }
-      if (!result.packagingDetails[packagingType][packagingColor]) {
-        result.packagingDetails[packagingType][packagingColor] = {};
-      }
-      if (!result.packagingDetails[packagingType][packagingColor][bouqSize]) {
-        result.packagingDetails[packagingType][packagingColor][bouqSize] = 1;
-      } else {
-        result.packagingDetails[packagingType][packagingColor][bouqSize] =
-          result.packagingDetails[packagingType][packagingColor][bouqSize] + 1;
-      }
+    } catch(error) {
+      const errText = `Ошибка обработки заказа ${order}. Строка ${i}`;
+      alert(errText)
+      throw new Error(errText)
     }
   });
   result.packagingDetails = getRealPackagingNames(result.packagingDetails);

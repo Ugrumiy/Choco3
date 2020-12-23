@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d904bb6a840799ee4201a9173227caf9",
+    "revision": "c6e82b17b64d021b9763cb8df55c7f3b",
     "url": "/ChocoStory/index.html"
   },
   {
-    "revision": "cf249b9b29940cb722fa",
+    "revision": "318dadbb5804f195bc07",
     "url": "/ChocoStory/static/css/main.5f55a625.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ChocoStory/static/js/2.737e7e19.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cf249b9b29940cb722fa",
-    "url": "/ChocoStory/static/js/main.36899f33.chunk.js"
+    "revision": "318dadbb5804f195bc07",
+    "url": "/ChocoStory/static/js/main.aa36e4fb.chunk.js"
   },
   {
     "revision": "7e79b33ae22d0272741c",
