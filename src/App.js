@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./styles.scss";
 import RoseCounter from "./RoseCounter/index";
-import SkuGenerator from "./skuGenerator";
+import SkuGenerator from "./SkuGenerator";
 import { appSections } from "./const";
 
 export default function App() {

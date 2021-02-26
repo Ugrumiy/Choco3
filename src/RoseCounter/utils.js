@@ -66,7 +66,8 @@ const getRealPackagingNames = (packagingDetails) => {
           result[packagingType][color] = `${packagingDetails[packagingType]["plain"][27]} шт.`;
           break;
         }
-        case "M": {
+        case "M":
+        case "MS": {
           const sumOfColors = getSumOfColors(packagingDetails[packagingType][color]);
           result[packagingType][color] = `${sumOfColors} шт.`;
           break;

@@ -179,6 +179,7 @@ export const paperColors = Object.keys(paperColorsMap).sort();
 export const packageNamesMap = {
   B: "Букет",
   M: "Мини-коробка",
+  MS: "Мини-коробка (сердце)",
   K: "Корзина",
   SH: "Шляпная коробка",
   Z: "Шляпная коробка (закрытая)",
