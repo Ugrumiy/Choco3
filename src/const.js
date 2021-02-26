@@ -64,6 +64,15 @@ export const proportions = {
 };
 
 export const colorNameMap = {
+  // Более длинные коды должны быть выше
+  SH: {
+    name: "Шоколадный",
+    color: "#4f2811"
+  },
+  ZL: {
+    name: "Золотой",
+    color: "#d4af37"
+  },
   B: {
     name: "Белый",
     color: "white"
@@ -92,14 +101,10 @@ export const colorNameMap = {
     name: "Фиолетовый",
     color: "#8b00ff"
   },
-  SH: {
-    name: "Шоколадный",
-    color: "#4f2811"
+  Z: {
+    name: "Зеленый",
+    color: "green"
   },
-  ZL: {
-    name: "Золотой",
-    color: "#d4af37"
-  }
 };
 
 export const roseColors = Object.keys(colorNameMap);
