@@ -120,7 +120,8 @@ export const getTotalColors = (data) => {
       result.totalOrders = result.totalOrders += 1;
 
       // roses
-      result.totalRoses = result.totalRoses += parseInt(bouqSize, 10);
+      result.totalRoses = result.totalRoses += parseInt(bouqSize, 10) * numberOfBouquets;
+
       const orderColorCode = splitOrderSKU.length === 2 || packagingType === 'K' ? splitOrderSKU[1] : splitOrderSKU[2];
       const bouqInfo = getColorsPerBouqet(bouqSize, orderColorCode);
 

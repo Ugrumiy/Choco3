@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/ChocoStory/static/css/main.5f55a625.chunk.css",
-    "main.js": "/ChocoStory/static/js/main.aa36e4fb.chunk.js",
-    "main.js.map": "/ChocoStory/static/js/main.aa36e4fb.chunk.js.map",
+    "main.js": "/ChocoStory/static/js/main.c3211c3a.chunk.js",
+    "main.js.map": "/ChocoStory/static/js/main.c3211c3a.chunk.js.map",
     "runtime-main.js": "/ChocoStory/static/js/runtime-main.7a824f04.js",
     "runtime-main.js.map": "/ChocoStory/static/js/runtime-main.7a824f04.js.map",
-    "static/js/2.737e7e19.chunk.js": "/ChocoStory/static/js/2.737e7e19.chunk.js",
-    "static/js/2.737e7e19.chunk.js.map": "/ChocoStory/static/js/2.737e7e19.chunk.js.map",
+    "static/js/2.5652174a.chunk.js": "/ChocoStory/static/js/2.5652174a.chunk.js",
+    "static/js/2.5652174a.chunk.js.map": "/ChocoStory/static/js/2.5652174a.chunk.js.map",
     "index.html": "/ChocoStory/index.html",
-    "precache-manifest.88a7f63e17bcf6396a3652b35d2dadfb.js": "/ChocoStory/precache-manifest.88a7f63e17bcf6396a3652b35d2dadfb.js",
+    "precache-manifest.4d2e847d323c2253ca761652c32d246d.js": "/ChocoStory/precache-manifest.4d2e847d323c2253ca761652c32d246d.js",
     "service-worker.js": "/ChocoStory/service-worker.js",
     "static/css/main.5f55a625.chunk.css.map": "/ChocoStory/static/css/main.5f55a625.chunk.css.map",
-    "static/js/2.737e7e19.chunk.js.LICENSE.txt": "/ChocoStory/static/js/2.737e7e19.chunk.js.LICENSE.txt"
+    "static/js/2.5652174a.chunk.js.LICENSE.txt": "/ChocoStory/static/js/2.5652174a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7a824f04.js",
-    "static/js/2.737e7e19.chunk.js",
+    "static/js/2.5652174a.chunk.js",
     "static/css/main.5f55a625.chunk.css",
-    "static/js/main.aa36e4fb.chunk.js"
+    "static/js/main.c3211c3a.chunk.js"
   ]
 }
