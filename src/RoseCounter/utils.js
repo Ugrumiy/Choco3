@@ -16,10 +16,11 @@ const getDivision = (num, colorAmount) => {
 };
 
 const decodeCombination = (combination) => {
+  let maxTryAmount = 100;
   let trimmedCombination = combination.replace(" ", "");
   let result = [];
 
-  while (trimmedCombination.length !== 0) {
+  while (trimmedCombination.length !== 0 && maxTryAmount !== 0) {
     roseColors.forEach((color) => {
       if (trimmedCombination.indexOf(color) !== 0) {
         return;
@@ -28,7 +29,13 @@ const decodeCombination = (combination) => {
         trimmedCombination = trimmedCombination.slice(color.length);
       }
     });
+    maxTryAmount -=1;
   }
+  if (maxTryAmount === 0) {
+    const errText = `Ошибка обработки комбинации ${combination}. Она будет пропущена. (Возможно новый цвет?)`;
+    alert(errText)
+  };
+
   return result;
 };
 
