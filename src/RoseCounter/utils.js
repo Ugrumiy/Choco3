@@ -15,7 +15,7 @@ const getDivision = (num, colorAmount) => {
   return result;
 };
 
-const decodeCombination = (combination) => {
+const decodeCombination = (combination, order, i) => {
   let maxTryAmount = 100;
   let trimmedCombination = combination.replace(" ", "");
   let result = [];
@@ -32,16 +32,16 @@ const decodeCombination = (combination) => {
     maxTryAmount -=1;
   }
   if (maxTryAmount === 0) {
-    const errText = `Ошибка обработки комбинации ${combination}. Она будет пропущена. (Возможно новый цвет?)`;
+    const errText = `Ошибка обработки комбинации "${combination}". Заказ ${order}. Строка ${i + 1}. Он будет пропущен. (Возможно новый цвет?)`;
     alert(errText)
   };
 
   return result;
 };
 
-const getColorsPerBouqet = (bouqSize, orderColorCode) => {
+const getColorsPerBouqet = (bouqSize, orderColorCode, order , i) => {
   const result = {};
-  const bColors = decodeCombination(orderColorCode);
+  const bColors = decodeCombination(orderColorCode, order, i);
   bColors.forEach((color, i) => {
     const proprotion =
       proportions[bouqSize] && proportions[bouqSize][bColors.length]
@@ -131,7 +131,7 @@ export const getTotalColors = (data) => {
       result.totalRoses = result.totalRoses += parseInt(bouqSize, 10) * numberOfBouquets;
 
       const orderColorCode = splitOrderSKU.length === 2 || packagingType === 'K' ? splitOrderSKU[1] : splitOrderSKU[2];
-      const bouqInfo = getColorsPerBouqet(bouqSize, orderColorCode);
+      const bouqInfo = getColorsPerBouqet(bouqSize, orderColorCode, order, i);
 
       Object.keys(bouqInfo).forEach((color) => {
         const colorsInOrder = bouqInfo[color] * numberOfBouquets;
