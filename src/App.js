@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import "./styles.scss";
 import RoseCounter from "./RoseCounter/index";
-import SkuGenerator from "./SkuGenerator";
-import { appSections } from "./const";
+// import SkuGenerator from "./SkuGenerator";
+// import { appSections } from "./const";
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState(appSections[0].id);
+  // const [activeSection, setActiveSection] = useState(appSections[0].id);
 
   return (
     <div className="App">
-      <div className="tabs mt-1">
+      {/* <div className="tabs mt-1">
         <ul className="nav nav-fill">
           {appSections.map((section) => (
             <li className="nav-item" key={section.id}>
@@ -25,8 +25,8 @@ export default function App() {
             </li>
           ))}
         </ul>
-      </div>
-      {activeSection === appSections[0].id ? <RoseCounter /> : <SkuGenerator />}
+      </div> */}
+      <RoseCounter />
     </div>
   );
 }
