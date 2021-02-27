@@ -32,7 +32,7 @@ const decodeCombination = (combination, order, i) => {
     maxTryAmount -=1;
   }
   if (maxTryAmount === 0) {
-    const errText = `Ошибка обработки комбинации "${combination}". Заказ ${order}. Строка ${i + 1}. Он будет пропущен. (Возможно новый цвет?)`;
+    const errText = `Ошибка обработки комбинации цветов: "${combination}". \nЗаказ ${order}. Строка ${i + 1}. \nОн будет пропущен. \nВозможно новый цвет?`;
     alert(errText)
   };
 
@@ -178,7 +178,7 @@ export const getTotalColors = (data) => {
         }
       }
     } catch(error) {
-      const errText = `Ошибка обработки заказа ${order}. Строка ${i + 1}`;
+      const errText = `Ошибка обработки заказа ${order}.\nСтрока ${i + 1}`;
       alert(errText)
       throw new Error(errText)
     }
